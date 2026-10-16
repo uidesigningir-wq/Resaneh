@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101510">
+
+  <title>اخبار و گزارش‌ها | رسانه بسیج دانشجویی دانشگاه فرهنگیان گیلان</title>
+  <meta name="description" content="اخبار، گزارش‌ها و روایت فعالیت‌های بسیج دانشجویی دانشگاه فرهنگیان استان گیلان">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101510;
+      --bg-soft: #171e18;
+      --card: #1b241d;
+      --green: #526b49;
+      --green-light: #82986d;
+      --gold: #c6aa72;
+      --cream: #eee9dc;
+      --muted: #a5aea2;
+      --line: rgba(238, 233, 220, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin-inline: auto;
+    }
+
+    .top-line {
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        var(--green-light),
+        transparent
+      );
+    }
+
+    /* Header */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16, 21, 16, 0.91);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 23px;
+      border-radius: 50%;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .brand-name small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d0d4ca;
+      font-size: 13px;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.current {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 9px 17px;
+      border: 1px solid rgba(198, 170, 114, 0.55);
+      color: var(--gold);
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      color: var(--cream);
+      border: 1px solid var(--line);
+      background: transparent;
+      font-size: 23px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(16,21,16,.18), rgba(16,21,16,.96)),
+        linear-gradient(0deg, var(--bg), transparent 45%),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85")
+        center 45% / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 15% 35%,
+          rgba(130,152,109,.18),
+          transparent 35%
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-block: 85px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(32px, 5vw, 57px);
+      line-height: 1.5;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: #c0c7bb;
+      font-size: 14px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-top: 27px;
+      padding: 8px 15px;
+      border-right: 2px solid var(--gold);
+      background: rgba(255,255,255,.04);
+      color: #d8ddcf;
+      font-size: 12px;
+    }
+
+    /* Main */
+
+    .main {
+      padding-block: 70px 100px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 27px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(23px, 3vw, 32px);
+      font-weight: 700;
+    }
+
+    .section-heading p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .heading-mark {
+      width: 45px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 13px;
+    }
+
+    /* Search */
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .search-box {
+      flex: 1;
+      position: relative;
+    }
+
+    .search-box span {
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      pointer-events: none;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 51px;
+      background: var(--bg-soft);
+      color: var(--cream);
+      border: 1px solid var(--line);
+      outline: none;
+      padding: 10px 45px 10px 15px;
+      transition: border-color .25s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--gold);
+    }
+
+    .search-box input::placeholder {
+      color: #858e83;
+    }
+
+    .search-count {
+      align-self: center;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* Categories */
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 35px;
+    }
+
+    .category-btn {
+      padding: 8px 17px;
+      color: #c0c8bc;
+      background: transparent;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      transition: .25s;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      color: var(--bg);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* Featured article */
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      margin-bottom: 65px;
+      overflow: hidden;
+    }
+
+    .featured-image {
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+      transition: transform .7s;
+    }
+
+    .featured:hover .featured-image img {
+      transform: scale(1.045);
+    }
+
+    .featured-content {
+      padding: clamp(24px, 4vw, 45px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid rgba(198,170,114,.45);
+      color: var(--gold);
+      font-size: 11px;
+      margin-bottom: 17px;
+    }
+
+    .featured h3 {
+      font-size: clamp(21px, 2.6vw, 31px);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .featured p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      color: #9ba597;
+      font-size: 11px;
+      margin-bottom: 24px;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: 13px;
+      transition: gap .25s;
+    }
+
+    .read-more:hover {
+      gap: 19px;
+    }
+
+    /* News grid */
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .news-card {
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition:
+        transform .3s,
+        border-color .3s,
+        background .3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(198,170,114,.5);
+      background: #202b22;
+    }
+
+    .news-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #222b23;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.06);
+    }
+
+    .news-image .image-tag {
+      position: absolute;
+      right: 14px;
+      bottom: 13px;
+      padding: 5px 10px;
+      background: rgba(16,21,16,.9);
+      color: var(--gold);
+      font-size: 10px;
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .news-content .meta {
+      margin-bottom: 10px;
+    }
+
+    .news-content h3 {
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 11px;
+    }
+
+    .news-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+      margin-bottom: 19px;
+    }
+
+    .news-content .read-more {
+      font-size: 12px;
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 45px 15px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    .empty-state.visible {
+      display: block;
+    }
+
+    /* Bottom banner */
+
+    .bottom-banner {
+      margin-top: 75px;
+      padding: 38px;
+      border: 1px solid rgba(198,170,114,.3);
+      background:
+        linear-gradient(110deg, rgba(82,107,73,.24), transparent),
+        var(--bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .bottom-banner h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .bottom-banner p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .gold-button {
+      display: inline-block;
+      flex-shrink: 0;
+      padding: 12px 20px;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 12px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .gold-button:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: #0b0f0c;
+      padding: 42px 0 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-description {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #b8c0b4;
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--line);
+      padding-top: 17px;
+      color: #7f897c;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* Reveal animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible,
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Back to top */
+
+    .back-to-top {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 90;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: #1b241d;
+      border: 1px solid rgba(198,170,114,.5);
+      font-size: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: .25s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .featured {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        padding: 18px 5% 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(16,21,16,.98);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 11px 0;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+      }
+
+      .hero {
+        min-height: 350px;
+      }
+
+      .hero-content {
+        padding-block: 65px;
+      }
+
+      .main {
+        padding-block: 48px 70px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image,
+      .featured-image img {
+        min-height: 240px;
+        height: 240px;
+      }
+
+      .news-grid {
+        gap: 13px;
+      }
+
+      .news-image {
+        height: 170px;
+      }
+
+      .news-content {
+        padding: 15px;
+      }
+
+      .news-content h3 {
+        font-size: 14px;
+      }
+
+      .news-content p {
+        font-size: 11px;
+      }
+
+      .bottom-banner {
+        padding: 25px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-main {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-image {
+        height: 215px;
+      }
+
+      .toolbar {
+        flex-direction: column;
+      }
+
+      .search-count {
+        align-self: flex-start;
+      }
+
+      .category-btn {
+        padding: 7px 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-line"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+
+      <a class="brand" href="index.html" aria-label="صفحه اصلی رسانه">
+        <span class="brand-mark">ر</span>
+        <span class="brand-name">
+          رسانه
+          <small>بسیج دانشجویی دانشگاه فرهنگیان گیلان</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="باز کردن منو"
+        aria-expanded="false"
+      >☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a class="current" href="news.html">اخبار و گزارش‌ها</a></li>
+        <li><a href="activities.html">حوزه‌های فعالیت</a></li>
+        <li><a href="media.html">چندرسانه‌ای</a></li>
+        <li><a href="publications.html">نشریات</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+      </ul>
+
+      <a href="#latestNews" class="nav-cta">تازه‌ترین روایت‌ها ←</a>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="eyebrow">NEWS & STORIES</div>
+
+      <h1>
+        روایت اتفاقات؛<br>
+        <span>ثبت لحظه‌های اثرگذار</span>
+      </h1>
+
+      <p>
+        اینجا روایت فعالیت‌ها، رویدادها و تجربه‌هایی را دنبال می‌کنیم
+        که در مسیر تعلیم‌وتربیت و کنشگری دانشجویی شکل می‌گیرند.
+      </p>
+
+      <span class="hero-label">
+        اخبار و گزارش‌های بسیج دانشجویی دانشگاه فرهنگیان استان گیلان
+      </span>
+
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="container main" id="latestNews">
+
+    <section class="section-heading reveal">
+      <div>
+        <h2>تازه‌ترین خبرها</h2>
+        <div class="heading-mark"></div>
+        <p>از رویدادها تا روایت‌های میدانی</p>
+      </div>
+    </section>
+
+    <!-- Search -->
+    <div class="toolbar reveal">
+      <label class="search-box">
+        <span>⌕</span>
+        <input
+          id="newsSearch"
+          type="search"
+          placeholder="عنوان یا موضوع خبر را جست‌وجو کن..."
+          aria-label="جست‌وجو در اخبار"
+        >
+      </label>
+
+      <span class="search-count" id="searchCount" aria-live="polite">
+        ۷ مطلب نمونه
+      </span>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories reveal" aria-label="دسته‌بندی اخبار">
+
+      <button class="category-btn active" type="button"
+        data-category-filter="all" aria-pressed="true">
+        همه مطالب
+      </button>
+
+      <button class="category-btn" type="button"
+        data-category-filter="events" aria-pressed="false">
+        رویدادها
+      </button>
+
+      <button class="category-btn" type="button"
+        data-category-filter="education" aria-pressed="false">
+        تعلیم‌وتربیت
+      </button>
+
+      <button class="category-btn" type="button"
+        data-category-filter="culture" aria-pressed="false">
+        فرهنگی
+      </button>
+
+      <button class="category-btn" type="button"
+        data-category-filter="reports" aria-pressed="false">
+        گزارش میدانی
+      </button>
+
+    </div>
+
+    <!-- Featured -->
+    <article class="featured reveal">
+
+      <a class="featured-image" href="article.html?id=featured"
+        aria-label="مشاهده گزارش ویژه">
+        <img
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=85"
+          alt="تصویر نمونه یک گردهمایی دانشجویی"
+          loading="lazy"
+        >
+      </a>
+
+      <div class="featured-content">
+
+        <span class="tag">روایت ویژه</span>
+
+        <h3>
+          از دانشگاه تا مدرسه؛ روایت تلاش برای ساختن آینده‌ای بهتر
+        </h3>
+
+        <p>
+          این بخش برای انتشار گزارش‌های مهم، رویدادهای شاخص و روایت
+          تجربه‌های اثرگذار دانشجومعلمان در مسیر تعلیم‌وتربیت در نظر گرفته شده است.
+        </p>
+
+        <div class="meta">
+          <span>✦ گزارش ویژه</span>
+          <span>✦ تحریریه رسانه</span>
+        </div>
+
+        <a class="read-more" href="article.html?id=featured">
+          مشاهده گزارش
+          <span>←</span>
+        </a>
+
+      </div>
+    </article>
+
+    <!-- News list -->
+    <section>
+      <div class="section-heading reveal">
+        <div>
+          <h2>آخرین روایت‌ها</h2>
+          <div class="heading-mark"></div>
+          <p>مطالب را بر اساس موضوع دلخواهت دنبال کن.</p>
+        </div>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+
+        <article class="news-card reveal"
+          data-news-card data-category="events">
+
+          <a class="news-image" href="article.html?id=1">
+            <img
+              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه یک گردهمایی"
+              loading="lazy"
+            >
+            <span class="image-tag">رویدادها</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>گزارش رویداد</span></div>
+            <h3>روایت یک گردهمایی دانشجویی</h3>
+            <p>
+              این قسمت برای انتشار خبرها و گزارش‌های مربوط به نشست‌ها
+              و برنامه‌های دانشجویی آماده شده است.
+            </p>
+            <a class="read-more" href="article.html?id=1">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+        <article class="news-card reveal"
+          data-news-card data-category="education">
+
+          <a class="news-image" href="article.html?id=2">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه محیط آموزشی"
+              loading="lazy"
+            >
+            <span class="image-tag">تعلیم‌وتربیت</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>یادداشت آموزشی</span></div>
+            <h3>مدرسه؛ میدان اصلی تحول تربیتی</h3>
+            <p>
+              فرصتی برای روایت تجربه‌های تربیتی، ایده‌های آموزشی
+              و تلاش برای بهبود فرایند یادگیری.
+            </p>
+            <a class="read-more" href="article.html?id=2">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+        <article class="news-card reveal"
+          data-news-card data-category="culture">
+
+          <a class="news-image" href="article.html?id=3">
+            <img
+              src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه فعالیت فرهنگی"
+              loading="lazy"
+            >
+            <span class="image-tag">فرهنگی</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>فعالیت فرهنگی</span></div>
+            <h3>فرهنگ، روایت و کنشگری دانشجویی</h3>
+            <p>
+              گزارشی نمونه برای معرفی برنامه‌های فرهنگی
+              و تجربه‌های خلاقانه دانشجویان.
+            </p>
+            <a class="read-more" href="article.html?id=3">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+        <article class="news-card reveal"
+          data-news-card data-category="reports">
+
+          <a class="news-image" href="article.html?id=4">
+            <img
+              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه فعالیت گروهی"
+              loading="lazy"
+            >
+            <span class="image-tag">گزارش میدانی</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>روایت میدانی</span></div>
+            <h3>از حضور در میدان تا تجربه خدمت</h3>
+            <p>
+              این بخش می‌تواند میزبان روایت فعالیت‌های جهادی،
+              آموزشی و اجتماعی دانشجومعلمان باشد.
+            </p>
+            <a class="read-more" href="article.html?id=4">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+        <article class="news-card reveal"
+          data-news-card data-category="events">
+
+          <a class="news-image" href="article.html?id=5">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه نشست گروهی"
+              loading="lazy"
+            >
+            <span class="image-tag">رویدادها</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>نشست تخصصی</span></div>
+            <h3>گفت‌وگو درباره افق‌های تربیت معلم</h3>
+            <p>
+              معرفی نشست‌ها و گفت‌وگوهایی که به بررسی مسائل
+              آموزش‌وپرورش و تربیت معلم می‌پردازند.
+            </p>
+            <a class="read-more" href="article.html?id=5">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+        <article class="news-card reveal"
+          data-news-card data-category="education">
+
+          <a class="news-image" href="article.html?id=6">
+            <img
+              src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80"
+              alt="تصویر نمونه کتاب و آموزش"
+              loading="lazy"
+            >
+            <span class="image-tag">تعلیم‌وتربیت</span>
+          </a>
+
+          <div class="news-content">
+            <div class="meta"><span>یادداشت</span></div>
+            <h3>معلم؛ فراتر از انتقال دانش</h3>
+            <p>
+              فضایی برای پرداختن به هویت معلمی، مسئولیت اجتماعی
+              و نقش تربیتی معلمان آینده.
+            </p>
+            <a class="read-more" href="article.html?id=6">ادامه مطلب ←</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        مطلبی با این عنوان یا دسته‌بندی پیدا نشد.
+        <br>
+        عبارت دیگری جست‌وجو کن.
+      </div>
+    </section>
+
+    <!-- Bottom banner -->
+    <section class="bottom-banner reveal">
+      <div>
+        <h3>روایت‌ها ادامه دارند...</h3>
+        <p>
+          از برنامه‌ها، تجربه‌ها و اتفاقات مجموعه بیشتر بدان.
+        </p>
+      </div>
+
+      <a href="about.html" class="gold-button">آشنایی با رسانه ←</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">ر</span>
+            <span class="brand-name">
+              رسانه
+              <small>بسیج دانشجویی دانشگاه فرهنگیان گیلان</small>
+            </span>
+          </a>
+
+          <p class="footer-description">
+            بستری برای روایت فعالیت‌ها، بازتاب ایده‌ها و ثبت تجربه‌های
+            دانشجومعلمان دانشگاه فرهنگیان استان گیلان.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+          <a href="index.html">صفحه اصلی</a>
+          <a href="news.html">اخبار</a>
+          <a href="activities.html">حوزه‌های فعالیت</a>
+          <a href="media.html">چندرسانه‌ای</a>
+          <a href="publications.html">نشریات</a>
+          <a href="about.html">درباره ما</a>
+        </nav>
+
+      </div>
+
+      <div class="copyright">
+        © <span data-current-year></span>
+        رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"
+    type="button" aria-label="بازگشت به بالای صفحه">↑</button>
+
+  <script src="assets/script.js" defer></script>
+
+  <script>
+    // هماهنگی جست‌وجو و دسته‌بندی
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("newsSearch");
+      const cards = [...document.querySelectorAll("[data-news-card]")];
+      const categoryButtons = [...document.querySelectorAll("[data-category-filter]")];
+      const count = document.getElementById("searchCount");
+      const emptyState = document.getElementById("emptyState");
+
+      let selectedCategory = "all";
+
+      function filterNews() {
+        const query = searchInput.value.trim().toLocaleLowerCase("fa");
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const text = card.textContent.toLocaleLowerCase("fa");
+          const category = card.dataset.category || "all";
+
+          const matchesText = text.includes(query);
+          const matchesCategory =
+            selectedCategory === "all" || category === selectedCategory;
+
+          const visible = matchesText && matchesCategory;
+
+          card.hidden = !visible;
+
+          if (visible) visibleCount++;
+        });
+
+        count.textContent = `${visibleCount} مطلب`;
+        emptyState.classList.toggle("visible", visibleCount === 0);
+      }
+
+      searchInput.addEventListener("input", filterNews);
+
+      categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          selectedCategory = button.dataset.categoryFilter;
+
+          categoryButtons.forEach(item => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
+          });
+
+          filterNews();
+        });
+      });
+
+      filterNews();
+    });
+  </script>
+
+</body>
+  </html>

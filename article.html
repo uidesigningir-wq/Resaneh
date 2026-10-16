@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101510">
+
+  <title>گزارش خبری | رسانه دانشگاه فرهنگیان گیلان</title>
+  <meta name="description" content="گزارش‌ها و روایت‌های رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101510;
+      --bg-soft: #171e18;
+      --card: #1b241d;
+      --green: #526b49;
+      --green-light: #82986d;
+      --gold: #c6aa72;
+      --cream: #eee9dc;
+      --muted: #a5aea2;
+      --line: rgba(238,233,220,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      line-height: 2;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin-inline: auto;
+    }
+
+    .top-line {
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        var(--green-light),
+        transparent
+      );
+    }
+
+    /* Header */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,21,16,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 50%;
+      font-size: 22px;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .brand-name small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      color: #d0d4ca;
+      font-size: 12px;
+      transition: color .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.current {
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--cream);
+      font-size: 22px;
+    }
+
+    /* Breadcrumb */
+
+    .breadcrumb {
+      padding-block: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+
+    .breadcrumb .separator {
+      color: var(--gold);
+    }
+
+    /* Article heading */
+
+    .article-heading {
+      max-width: 880px;
+      margin: 20px auto 35px;
+      text-align: center;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 5px 14px;
+      color: var(--gold);
+      border: 1px solid rgba(198,170,114,.45);
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    .article-heading h1 {
+      font-size: clamp(27px, 4.5vw, 48px);
+      line-height: 1.8;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .article-heading .subtitle {
+      max-width: 700px;
+      margin-inline: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 25px;
+      color: #a8b0a4;
+      font-size: 11px;
+    }
+
+    .article-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .gold-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* Hero image */
+
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: clamp(260px, 52vw, 570px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .article-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-cover::after {
+      content: "";
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent, rgba(16,21,16,.55));
+      pointer-events: none;
+    }
+
+    .cover-caption {
+      position: absolute;
+      z-index: 1;
+      bottom: 18px;
+      right: 22px;
+      color: #eee9dc;
+      font-size: 11px;
+    }
+
+    /* Layout */
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 285px;
+      gap: 55px;
+      align-items: start;
+      padding-block: 55px 85px;
+    }
+
+    .article-body {
+      min-width: 0;
+    }
+
+    .article-intro {
+      color: #e0d8c7;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 2.2;
+      border-right: 3px solid var(--gold);
+      padding: 7px 20px 7px 0;
+      margin-bottom: 35px;
+    }
+
+    .article-body h2 {
+      color: var(--cream);
+      font-size: 23px;
+      line-height: 1.8;
+      margin: 35px 0 15px;
+    }
+
+    .article-body h3 {
+      color: var(--gold);
+      font-size: 18px;
+      margin: 28px 0 12px;
+    }
+
+    .article-body p {
+      color: #bdc5b9;
+      font-size: 14px;
+      line-height: 2.5;
+      margin-bottom: 20px;
+    }
+
+    .article-body blockquote {
+      margin: 32px 0;
+      padding: 25px;
+      background: var(--bg-soft);
+      border-right: 3px solid var(--green-light);
+      color: var(--cream);
+      font-size: 16px;
+      line-height: 2.2;
+    }
+
+    .article-body blockquote small {
+      display: block;
+      margin-top: 12px;
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    .article-inline-image {
+      margin: 32px 0;
+    }
+
+    .article-inline-image img {
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .article-inline-image figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* Share */
+
+    .article-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding-block: 22px;
+      margin-top: 35px;
+    }
+
+    .share-title {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 9px;
+    }
+
+    .share-button {
+      padding: 8px 13px;
+      background: var(--card);
+      color: var(--cream);
+      border: 1px solid var(--line);
+      font-size: 11px;
+      transition: .25s;
+    }
+
+    .share-button:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: sticky;
+      top: 105px;
+    }
+
+    .sidebar-box {
+      padding: 23px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+
+    .sidebar-title {
+      font-size: 17px;
+      margin-bottom: 17px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sidebar-title::after {
+      content: "";
+      display: block;
+      width: 35px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 12px;
+    }
+
+    .sidebar-box p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2.2;
+    }
+
+    .sidebar-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    .sidebar-link:last-child {
+      border-bottom: 0;
+    }
+
+    .sidebar-link:hover {
+      color: var(--gold);
+    }
+
+    .sidebar-link span {
+      color: var(--gold);
+    }
+
+    /* Related articles */
+
+    .related-section {
+      padding-block: 65px 80px;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 27px;
+    }
+
+    .section-heading p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .heading-mark {
+      width: 43px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 13px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .related-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      overflow: hidden;
+      transition: transform .3s, border-color .3s;
+    }
+
+    .related-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(198,170,114,.5);
+    }
+
+    .related-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .related-content {
+      padding: 19px;
+    }
+
+    .related-content small {
+      color: var(--gold);
+      font-size: 10px;
+    }
+
+    .related-content h3 {
+      font-size: 15px;
+      line-height: 1.9;
+      margin: 9px 0 14px;
+    }
+
+    .related-content a {
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    /* Footer */
+
+    .footer {
+      background: #0b0f0c;
+      padding: 40px 0 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 27px;
+    }
+
+    .footer-description {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 17px;
+    }
+
+    .footer-links a {
+      color: #b8c0b4;
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--line);
+      padding-top: 17px;
+      color: #7f897c;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .back-to-top {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 90;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: var(--card);
+      border: 1px solid rgba(198,170,114,.5);
+      font-size: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .25s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .article-layout {
+        grid-template-columns: minmax(0, 1fr) 240px;
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        padding: 15px 5% 22px;
+        background: rgba(16,21,16,.99);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+        font-size: 13px;
+      }
+
+      .article-heading {
+        margin-top: 15px;
+      }
+
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 35px;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-main {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-heading h1 {
+        font-size: 26px;
+      }
+
+      .article-heading .subtitle {
+        font-size: 12px;
+      }
+
+      .article-meta {
+        gap: 10px 15px;
+      }
+
+      .article-intro {
+        font-size: 15px;
+      }
+
+      .article-body p {
+        font-size: 13px;
+      }
+
+      .share-buttons {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-line"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ر</span>
+        <span class="brand-name">
+          رسانه
+          <small>بسیج دانشجویی دانشگاه فرهنگیان گیلان</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="باز کردن منو"
+        aria-expanded="false"
+      >☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a class="current" href="news.html">اخبار و گزارش‌ها</a></li>
+        <li><a href="activities.html">حوزه‌های فعالیت</a></li>
+        <li><a href="media.html">چندرسانه‌ای</a></li>
+        <li><a href="publications.html">نشریات</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="separator">/</span>
+        <a href="news.html">اخبار و گزارش‌ها</a>
+        <span class="separator">/</span>
+        <span id="breadcrumbTitle">گزارش خبری</span>
+      </nav>
+
+      <!-- Article heading -->
+      <header class="article-heading">
+
+        <span class="article-category" id="articleCategory">
+          گزارش خبری
+        </span>
+
+        <h1 id="articleTitle">
+          از دانشگاه تا مدرسه؛ روایت تلاش برای ساختن آینده‌ای بهتر
+        </h1>
+
+        <p class="subtitle" id="articleSubtitle">
+          روایت تجربه‌ها، برنامه‌ها و تلاش‌هایی که در مسیر تعلیم‌وتربیت شکل می‌گیرند.
+        </p>
+
+        <div class="article-meta">
+          <span><i class="gold-dot"></i><span id="articleAuthor">تحریریه رسانه</span></span>
+          <span><i class="gold-dot"></i><span id="articleDate">گزارش ویژه</span></span>
+          <span><i class="gold-dot"></i><span id="readingTime">مطالعه ۳ دقیقه‌ای</span></span>
+        </div>
+
+      </header>
+
+      <!-- Cover -->
+      <figure class="article-cover">
+        <img
+          id="articleImage"
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1800&q=85"
+          alt="تصویر اصلی گزارش"
+        >
+        <figcaption class="cover-caption" id="imageCaption">
+          رسانه بسیج دانشجویی دانشگاه فرهنگیان گیلان
+        </figcaption>
+      </figure>
+
+      <!-- Article and sidebar -->
+      <div class="article-layout">
+
+        <article class="article-body">
+
+          <div class="article-intro" id="articleIntro">
+            این گزارش، روایتی نمونه از فعالیت‌ها و تجربه‌های دانشجومعلمان
+            در مسیر تعلیم‌وتربیت است. متن نهایی باید با محتوای واقعی خبر جایگزین شود.
+          </div>
+
+          <div id="articleContent">
+
+            <h2>روایت یک مسیر</h2>
+
+            <p>
+              تعلیم‌وتربیت، مسیری پیوسته و نیازمند تلاش، شناخت و تجربه است.
+              دانشجومعلمان در دوران تحصیل خود فرصت دارند تا افزون بر آموختن
+              دانش تخصصی، با مسائل واقعی مدرسه و جامعه نیز آشنا شوند.
+            </p>
+
+            <p>
+              در این مسیر، برنامه‌های آموزشی، فرهنگی و اجتماعی می‌توانند
+              زمینه‌ای برای تجربه‌اندوزی، گفت‌وگو و تقویت مهارت‌های حرفه‌ای
+              معلمان آینده فراهم کنند.
+            </p>
+
+            <h2>از ایده تا عمل</h2>
+
+            <p>
+              تبدیل ایده‌ها به فعالیت‌های مؤثر، به برنامه‌ریزی، مشارکت و
+              ارزیابی مستمر نیاز دارد. روایت دقیق تجربه‌ها نیز کمک می‌کند
+              تا آموخته‌های هر برنامه در دسترس دیگران قرار بگیرد.
+            </p>
+
+            <blockquote>
+              معلمی، پیوندی میان دانایی، مسئولیت و اثرگذاری اجتماعی است.
+              <small>یادداشتی درباره هویت حرفه‌ای معلم</small>
+            </blockquote>
+
+            <h2>ادامه مسیر</h2>
+
+            <p>
+              این صفحه قالب انتشار گزارش‌های کامل رسانه است. هنگام انتشار
+              خبر واقعی، تیتر، تاریخ، تصویر و تمام بندهای این متن باید با
+              اطلاعات تأییدشده همان خبر جایگزین شوند.
+            </p>
+
+          </div>
+
+          <!-- Share -->
+          <div class="article-actions">
+            <span class="share-title">این گزارش را به اشتراک بگذار:</span>
+
+            <div class="share-buttons">
+              <button class="share-button" id="copyLink" type="button">
+                کپی پیوند
+              </button>
+
+              <a class="share-button" id="telegramShare"
+                href="https://t.me/share/url" target="_blank"
+                rel="noopener noreferrer">
+                اشتراک در تلگرام
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+          <div class="sidebar-box">
+            <h2 class="sidebar-title">درباره این رسانه</h2>
+            <p>
+              رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان؛ بستری
+              برای روایت فعالیت‌ها، بازتاب ایده‌ها و ثبت تجربه‌های
+              دانشجومعلمان.
+            </p>
+            <br>
+            <a class="sidebar-link" href="about.html">
+              بیشتر درباره ما <span>←</span>
+            </a>
+          </div>
+
+          <div class="sidebar-box">
+            <h2 class="sidebar-title">بخش‌های رسانه</h2>
+
+            <a class="sidebar-link" href="news.html">
+              اخبار و گزارش‌ها <span>←</span>
+            </a>
+
+            <a class="sidebar-link" href="activities.html">
+              حوزه‌های فعالیت <span>←</span>
+            </a>
+
+            <a class="sidebar-link" href="media.html">
+              چندرسانه‌ای <span>←</span>
+            </a>
+
+            <a class="sidebar-link" href="publications.html">
+              نشریات <span>←</span>
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+    <!-- Related -->
+    <section class="related-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>روایت‌های دیگر</h2>
+          <div class="heading-mark"></div>
+          <p>خبرها و گزارش‌های بیشتر را دنبال کن.</p>
+        </div>
+
+        <div class="related-grid">
+
+          <article class="related-card">
+            <a href="article.html?id=1">
+              <img
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80"
+                alt="تصویر نمونه گردهمایی"
+                loading="lazy"
+              >
+            </a>
+            <div class="related-content">
+              <small>رویدادها</small>
+              <h3>روایت یک گردهمایی دانشجویی</h3>
+              <a href="article.html?id=1">مشاهده گزارش ←</a>
+            </div>
+          </article>
+
+          <article class="related-card">
+            <a href="article.html?id=2">
+              <img
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80"
+                alt="تصویر نمونه محیط آموزشی"
+                loading="lazy"
+              >
+            </a>
+            <div class="related-content">
+              <small>تعلیم‌وتربیت</small>
+              <h3>مدرسه؛ میدان اصلی تحول تربیتی</h3>
+              <a href="article.html?id=2">مشاهده گزارش ←</a>
+            </div>
+          </article>
+
+          <article class="related-card">
+            <a href="article.html?id=3">
+              <img
+                src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80"
+                alt="تصویر نمونه فعالیت فرهنگی"
+                loading="lazy"
+              >
+            </a>
+            <div class="related-content">
+              <small>فرهنگی</small>
+              <h3>فرهنگ، روایت و کنشگری دانشجویی</h3>
+              <a href="article.html?id=3">مشاهده گزارش ←</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">ر</span>
+            <span class="brand-name">
+              رسانه
+              <small>بسیج دانشجویی دانشگاه فرهنگیان گیلان</small>
+            </span>
+          </a>
+
+          <p class="footer-description">
+            بستری برای روایت فعالیت‌ها، بازتاب ایده‌ها و ثبت تجربه‌های
+            دانشجومعلمان دانشگاه فرهنگیان استان گیلان.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+          <a href="index.html">صفحه اصلی</a>
+          <a href="news.html">اخبار</a>
+          <a href="activities.html">حوزه‌های فعالیت</a>
+          <a href="media.html">چندرسانه‌ای</a>
+          <a href="publications.html">نشریات</a>
+          <a href="about.html">درباره ما</a>
+        </nav>
+
+      </div>
+
+      <div class="copyright">
+        © <span data-current-year></span>
+        رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان
+      </div>
+
+    </div>
+  </footer>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="بازگشت به بالای صفحه"
+  >↑</button>
+
+  <script src="assets/script.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // اطلاعات نمونه خبرها
+      // این اطلاعات فعلاً داخل همین فایل قرار دارند.
+      const articles = {
+        featured: {
+          category: "روایت ویژه",
+          title: "از دانشگاه تا مدرسه؛ روایت تلاش برای ساختن آینده‌ای بهتر",
+          subtitle: "روایت تجربه‌ها، برنامه‌ها و تلاش‌هایی که در مسیر تعلیم‌وتربیت شکل می‌گیرند.",
+          author: "تحریریه رسانه",
+          date: "گزارش ویژه",
+          image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه گزارش ویژه",
+          intro: "این گزارش، روایتی نمونه از فعالیت‌ها و تجربه‌های دانشجومعلمان در مسیر تعلیم‌وتربیت است.",
+          content: `
+            <h2>روایت یک مسیر</h2>
+            <p>تعلیم‌وتربیت، مسیری پیوسته و نیازمند تلاش، شناخت و تجربه است. دانشجومعلمان در دوران تحصیل خود فرصت دارند تا افزون بر آموختن دانش تخصصی، با مسائل واقعی مدرسه و جامعه نیز آشنا شوند.</p>
+            <p>در این مسیر، برنامه‌های آموزشی، فرهنگی و اجتماعی می‌توانند زمینه‌ای برای تجربه‌اندوزی، گفت‌وگو و تقویت مهارت‌های حرفه‌ای معلمان آینده فراهم کنند.</p>
+            <h2>از ایده تا عمل</h2>
+            <p>تبدیل ایده‌ها به فعالیت‌های مؤثر، به برنامه‌ریزی، مشارکت و ارزیابی مستمر نیاز دارد. روایت دقیق تجربه‌ها نیز کمک می‌کند تا آموخته‌های هر برنامه در دسترس دیگران قرار بگیرد.</p>
+            <h2>ادامه مسیر</h2>
+            <p>این متن نمونه است و باید با گزارش واقعی جایگزین شود.</p>
+          `
+        },
+
+        "1": {
+          category: "رویدادها",
+          title: "روایت یک گردهمایی دانشجویی",
+          subtitle: "نمونه‌ای برای انتشار خبر نشست‌ها و برنامه‌های دانشجویی.",
+          author: "تحریریه رسانه",
+          date: "گزارش رویداد",
+          image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه گردهمایی",
+          intro: "این متن نمونه است؛ جزئیات رویداد، زمان برگزاری و محورهای برنامه باید با اطلاعات واقعی تکمیل شود.",
+          content: `
+            <h2>شرح برنامه</h2>
+            <p>در این بخش می‌توان شرح کامل رویداد، اهداف برگزاری، محورهای گفت‌وگو و جزئیات برنامه را منتشر کرد.</p>
+            <h2>محورهای اصلی</h2>
+            <p>موضوعات مطرح‌شده، سخنرانان و نتایج نشست باید در این قسمت درج شوند.</p>
+            <h2>جمع‌بندی</h2>
+            <p>این بخش برای بیان نتایج و برنامه‌های بعدی رویداد در نظر گرفته شده است.</p>
+          `
+        },
+
+        "2": {
+          category: "تعلیم‌وتربیت",
+          title: "مدرسه؛ میدان اصلی تحول تربیتی",
+          subtitle: "نگاهی به جایگاه مدرسه در فرایند تعلیم‌وتربیت.",
+          author: "تحریریه رسانه",
+          date: "یادداشت آموزشی",
+          image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه محیط آموزشی",
+          intro: "این یادداشت نمونه، به نقش مدرسه در شکل‌گیری تجربه‌های تربیتی دانش‌آموزان می‌پردازد.",
+          content: `
+            <h2>مدرسه و تربیت</h2>
+            <p>مدرسه یکی از مهم‌ترین محیط‌های یادگیری و رشد اجتماعی دانش‌آموزان است. کیفیت تجربه‌های آموزشی و ارتباط میان معلم و دانش‌آموز می‌تواند در این مسیر نقش مهمی داشته باشد.</p>
+            <h2>نقش معلم</h2>
+            <p>معلم با دانش تخصصی، مهارت ارتباطی و شناخت نیازهای دانش‌آموزان، در شکل‌گیری محیطی پویا و یادگیرنده نقش‌آفرینی می‌کند.</p>
+          `
+        },
+
+        "3": {
+          category: "فرهنگی",
+          title: "فرهنگ، روایت و کنشگری دانشجویی",
+          subtitle: "نمونه‌ای برای معرفی برنامه‌ها و تجربه‌های فرهنگی.",
+          author: "تحریریه رسانه",
+          date: "فعالیت فرهنگی",
+          image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه فعالیت فرهنگی",
+          intro: "فعالیت فرهنگی زمانی ماندگارتر می‌شود که تجربه‌ها ثبت شوند و امکان گفت‌وگو و انتقال آموخته‌ها فراهم باشد.",
+          content: `
+            <h2>روایت تجربه فرهنگی</h2>
+            <p>این بخش برای توضیح اهداف برنامه، روند اجرا، مخاطبان و نتایج فعالیت‌های فرهنگی آماده شده است.</p>
+            <h2>از تجربه تا یادگیری</h2>
+            <p>ثبت تجربه‌ها کمک می‌کند تا نقاط قوت، چالش‌ها و پیشنهادهای بهبود برنامه‌های آینده مشخص شوند.</p>
+          `
+        },
+
+        "4": {
+          category: "گزارش میدانی",
+          title: "از حضور در میدان تا تجربه خدمت",
+          subtitle: "روایتی نمونه از فعالیت‌های آموزشی و اجتماعی.",
+          author: "تحریریه رسانه",
+          date: "روایت میدانی",
+          image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه فعالیت گروهی",
+          intro: "این گزارش نمونه برای ثبت تجربه‌های میدانی، فعالیت‌های جهادی و برنامه‌های خدمت‌رسانی طراحی شده است.",
+          content: `
+            <h2>حضور در میدان</h2>
+            <p>در این بخش می‌توان محل اجرا، گروه‌های مشارکت‌کننده، فعالیت‌های انجام‌شده و نیازهای شناسایی‌شده را شرح داد.</p>
+            <h2>نتایج و آموخته‌ها</h2>
+            <p>نتایج برنامه و تجربه‌های به‌دست‌آمده باید با اطلاعات دقیق و قابل بررسی منتشر شوند.</p>
+          `
+        },
+
+        "5": {
+          category: "رویدادها",
+          title: "گفت‌وگو درباره افق‌های تربیت معلم",
+          subtitle: "نمونه‌ای برای معرفی نشست‌های تخصصی آموزش‌وپرورش.",
+          author: "تحریریه رسانه",
+          date: "نشست تخصصی",
+          image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه نشست",
+          intro: "نشست‌های تخصصی فرصتی برای طرح پرسش‌ها، بررسی مسائل و تبادل تجربه میان فعالان حوزه تعلیم‌وتربیت فراهم می‌کنند.",
+          content: `
+            <h2>محورهای گفت‌وگو</h2>
+            <p>محورهای اصلی نشست، دیدگاه‌های مطرح‌شده و جمع‌بندی مباحث را در این قسمت وارد کن.</p>
+            <h2>دستاوردهای نشست</h2>
+            <p>پیشنهادها و تصمیم‌های قابل انتشار باید در این بخش درج شوند.</p>
+          `
+        },
+
+        "6": {
+          category: "تعلیم‌وتربیت",
+          title: "معلم؛ فراتر از انتقال دانش",
+          subtitle: "نگاهی به هویت حرفه‌ای و نقش تربیتی معلم.",
+          author: "تحریریه رسانه",
+          date: "یادداشت",
+          image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1800&q=85",
+          caption: "تصویر نمونه محیط آموزشی",
+          intro: "معلمی علاوه بر انتقال دانش، با شناخت دانش‌آموز، ایجاد انگیزه و فراهم‌کردن زمینه رشد او پیوند دارد.",
+          content: `
+            <h2>هویت حرفه‌ای معلم</h2>
+            <p>دانش تخصصی، مهارت تدریس، مسئولیت‌پذیری و توانایی برقراری ارتباط از عناصر مهم حرفه معلمی هستند.</p>
+            <h2>مسیر رشد</h2>
+            <p>یادگیری پیوسته و بازاندیشی درباره تجربه‌های کلاس درس می‌تواند به رشد حرفه‌ای معلمان کمک کند.</p>
+          `
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id") || "featured";
+      const article = articles[id] || articles.featured;
+
+      document.title = article.title + " | رسانه دانشگاه فرهنگیان گیلان";
+
+      document.getElementById("articleCategory").textContent = article.category;
+      document.getElementById("articleTitle").textContent = article.title;
+      document.getElementById("articleSubtitle").textContent = article.subtitle;
+      document.getElementById("articleAuthor").textContent = article.author;
+      document.getElementById("articleDate").textContent = article.date;
+      document.getElementById("articleImage").src = article.image;
+      document.getElementById("articleImage").alt = article.title;
+      document.getElementById("imageCaption").textContent = article.caption;
+      document.getElementById("articleIntro").textContent = article.intro;
+      document.getElementById("articleContent").innerHTML = article.content;
+      document.getElementById("breadcrumbTitle").textContent = article.title;
+
+      // محاسبه تقریبی زمان مطالعه
+      const words = (
+        article.title + " " +
+        article.subtitle + " " +
+        article.intro + " " +
+        document.getElementById("articleContent").textContent
+      ).trim().split(/\s+/).length;
+
+      document.getElementById("readingTime").textContent =
+        "مطالعه " + Math.max(1, Math.ceil(words / 200)) + " دقیقه‌ای";
+
+      // تنظیم پیوند اشتراک‌گذاری تلگرام
+      const shareUrl = window.location.href;
+      const telegramLink =
+        "https://t.me/share/url?url=" +
+        encodeURIComponent(shareUrl) +
+        "&text=" +
+        encodeURIComponent(article.title);
+
+      document.getElementById("telegramShare").href = telegramLink;
+
+      // کپی پیوند خبر
+      document.getElementById("copyLink").addEventListener("click", async () => {
+        const button = document.getElementById("copyLink");
+
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          button.textContent = "پیوند کپی شد ✓";
+        } catch (error) {
+          window.prompt("پیوند خبر را کپی کن:", window.location.href);
+        }
+
+        setTimeout(() => {
+          button.textContent = "کپی پیوند";
+        }, 2200);
+      });
+
+    });
+  </script>
+
+</body>
+            </html>

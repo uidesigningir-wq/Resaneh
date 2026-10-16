@@ -1,15 +1,1973 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رسانه بسیج دانشجویی گیلان</title>
-</head>
-<body style="background-color: #102b24; color: white; font-family: Tahoma; text-align: center; padding: 50px 10px;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h1>رسانه بسیج دانشجویی</h1>
-    <h2>دانشگاه فرهنگیان استان گیلان</h2>
-    <p>حاجی، سایت با موفقیت بالا اومد! 💚</p>
+<meta name="theme-color" content="#071b16">
+<meta name="description" content="رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان">
+
+<title>رسانه | بسیج دانشجویی دانشگاه فرهنگیان گیلان</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #071b16;
+    --bg2: #0c2820;
+    --green: #173d30;
+    --green-light: #245640;
+    --gold: #d5b778;
+    --cream: #f0eadb;
+    --muted: #a9b8ad;
+    --line: rgba(240,234,219,.13);
+    --radius: 22px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    line-height: 1.9;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin-inline: auto;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 45px);
+    font-weight: 800;
+    line-height: 1.5;
+    margin-top: 10px;
+    letter-spacing: -1px;
+}
+
+.section-desc {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 420px;
+    margin-top: 8px;
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    border-radius: 50px;
+    padding: 10px 18px;
+    font-size: 12px;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+/* BACKGROUND EFFECTS */
+
+.ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ambient::before,
+.ambient::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .12;
+    animation: ambientMove 14s ease-in-out infinite alternate;
+}
+
+.ambient::before {
+    background: #2c9162;
+    top: 5%;
+    right: -200px;
+}
+
+.ambient::after {
+    background: #c6a15a;
+    left: -250px;
+    bottom: 5%;
+    animation-delay: -7s;
+}
+
+@keyframes ambientMove {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(60px,-40px) scale(1.3); }
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+}
+
+/* HEADER */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7,27,22,.82);
+    backdrop-filter: blur(22px);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-mark {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(213,183,120,.65);
+    color: var(--gold);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    position: relative;
+}
+
+.brand-mark::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(213,183,120,.25);
+    border-radius: 50%;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.brand-text span {
+    color: var(--muted);
+    display: block;
+    font-size: 10px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav-links a {
+    color: #c4d0c7;
+    font-size: 12px;
+    transition: .3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    border: 1px solid rgba(213,183,120,.5);
+    color: var(--gold);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+.menu-toggle {
+    display: none;
+    width: 43px;
+    height: 43px;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 690px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(270deg, rgba(7,27,22,.98) 0%, rgba(7,27,22,.85) 35%, rgba(7,27,22,.25) 100%),
+        linear-gradient(0deg, var(--bg) 0%, transparent 35%),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=85") center/cover;
+    transform: scale(1.05);
+    animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.03); }
+    to { transform: scale(1.13); }
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: .09;
+    background-image:
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size: 75px 75px;
+    mask-image: linear-gradient(to left, black, transparent 80%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 90px 0 115px;
+    max-width: 720px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(213,183,120,.35);
+    background: rgba(213,183,120,.08);
+    border-radius: 50px;
+    padding: 8px 15px;
+    color: var(--gold);
+    font-size: 11px;
+    margin-bottom: 28px;
+    animation: fadeUp .8s both;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(213,183,120,.12);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% { box-shadow: 0 0 0 9px rgba(213,183,120,0); }
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 83px);
+    line-height: 1.35;
+    font-weight: 900;
+    letter-spacing: -2px;
+    animation: fadeUp .9s .1s both;
+}
+
+.hero h1 .outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gold);
+}
+
+.hero-description {
+    color: #c0cdc4;
+    font-size: 15px;
+    max-width: 530px;
+    margin-top: 22px;
+    line-height: 2.2;
+    animation: fadeUp .9s .2s both;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+    animation: fadeUp .9s .3s both;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 51px;
+    padding: 12px 23px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #13251c;
+    box-shadow: 0 8px 30px rgba(213,183,120,.13);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(213,183,120,.27);
+}
+
+.btn-outline {
+    border: 1px solid rgba(240,234,219,.35);
+    color: var(--cream);
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,.08);
+    border-color: var(--gold);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 28px;
+    right: 5%;
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aab7ae;
+    font-size: 10px;
+    z-index: 3;
+}
+
+.hero-scroll {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.scroll-line {
+    height: 1px;
+    width: 55px;
+    background: var(--gold);
+}
+
+/* TICKER */
+
+.ticker {
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,.018);
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 32s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 19px 35px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #bdc9c0;
+}
+
+.ticker-item span {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+@keyframes ticker {
+    to { transform: translateX(50%); }
+}
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--line);
+}
+
+.stat {
+    padding: 35px 20px;
+    text-align: center;
+    border-left: 1px solid var(--line);
+    transition: .3s;
+}
+
+.stat:last-child {
+    border-left: 0;
+}
+
+.stat:hover {
+    background: rgba(255,255,255,.025);
+}
+
+.stat-number {
+    color: var(--gold);
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* NEWS */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 20px;
+}
+
+.news-card {
+    border: 1px solid var(--line);
+    background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform .4s, border-color .4s;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(213,183,120,.5);
+}
+
+.news-image {
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+    background: var(--green);
+}
+
+.news-card.featured .news-image {
+    height: 280px;
+}
+
+.news-image img {
+    height: 100%;
+    transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.08);
+}
+
+.news-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(7,27,22,.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(213,183,120,.35);
+    color: var(--gold);
+    padding: 5px 11px;
+    border-radius: 50px;
+    font-size: 10px;
+}
+
+.news-body {
+    padding: 22px;
+}
+
+.news-meta {
+    color: #8eaa98;
+    font-size: 10px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.news-body h3 {
+    font-size: 17px;
+    line-height: 1.9;
+    font-weight: 700;
+    transition: color .3s;
+}
+
+.news-card:hover h3 {
+    color: var(--gold);
+}
+
+.news-body p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 12px;
+    line-height: 2;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+    color: var(--gold);
+    font-size: 11px;
+}
+
+.arrow-circle {
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .3s;
+}
+
+.news-card:hover .arrow-circle {
+    background: var(--gold);
+    color: var(--bg);
+    transform: rotate(-35deg);
+}
+
+/* MANIFESTO */
+
+.manifesto {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 15% 50%, rgba(43,99,67,.23), transparent 55%),
+        linear-gradient(130deg, #0d2c21, #071b16);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.manifesto::after {
+    content: "رسانه";
+    position: absolute;
+    left: -40px;
+    bottom: -125px;
+    font-size: clamp(130px, 25vw, 350px);
+    line-height: 1;
+    font-weight: 900;
+    color: rgba(240,234,219,.025);
+    pointer-events: none;
+}
+
+.manifesto-inner {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.manifesto-symbol {
+    width: min(260px, 100%);
+    aspect-ratio: 1;
+    margin: auto;
+    border: 1px solid rgba(213,183,120,.35);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    color: var(--gold);
+    font-size: 100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.manifesto-symbol::before,
+.manifesto-symbol::after {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(213,183,120,.2);
+    border-radius: 50%;
+}
+
+.manifesto-symbol::after {
+    inset: -13px;
+    border-style: dashed;
+    animation: spin 50s linear infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.manifesto h2 {
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.6;
+    margin: 15px 0;
+    font-weight: 900;
+}
+
+.manifesto p {
+    color: #bdc9c0;
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 2.4;
+}
+
+.manifesto .btn {
+    margin-top: 28px;
+}
+
+/* EVENTS */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    padding: 25px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.025);
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.event-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .4s;
+}
+
+.event-card:hover::before {
+    width: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.045);
+    border-color: rgba(213,183,120,.3);
+}
+
+.event-number {
+    color: rgba(213,183,120,.2);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.event-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(213,183,120,.09);
+    border: 1px solid rgba(213,183,120,.2);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.event-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.event-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.event-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--gold);
+    font-size: 11px;
+}
+
+/* MEDIA */
+
+.media-section {
+    background: rgba(255,255,255,.018);
+    border-block: 1px solid var(--line);
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 18px;
+}
+
+.media-card {
+    position: relative;
+    min-height: 260px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--green);
+}
+
+.media-card:first-child {
+    grid-row: span 2;
+    min-height: 540px;
+}
+
+.media-card img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    transition: transform .8s;
+}
+
+.media-card:hover img {
+    transform: scale(1.08);
+}
+
+.media-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4,19,14,.95), transparent 75%);
+}
+
+.media-overlay {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 25px;
+}
+
+.media-type {
+    color: var(--gold);
+    font-size: 10px;
+}
+
+.media-overlay h3 {
+    font-size: 19px;
+    margin-top: 8px;
+    line-height: 1.8;
+}
+
+.media-card:first-child .media-overlay h3 {
+    font-size: 28px;
+}
+
+.media-play {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(240,234,219,.6);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+    transition: .3s;
+}
+
+.media-card:hover .media-play {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+}
+
+/* PUBLICATIONS */
+
+.pub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.pub-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 25px;
+    background: linear-gradient(145deg, rgba(255,255,255,.04), transparent);
+    transition: .35s;
+}
+
+.pub-card:hover {
+    border-color: rgba(213,183,120,.45);
+    transform: translateY(-5px);
+}
+
+.pub-cover {
+    min-height: 210px;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(213,183,120,.22), transparent 45%),
+        linear-gradient(140deg, #234b36, #081b15);
+    border: 1px solid rgba(213,183,120,.17);
+    overflow: hidden;
+    position: relative;
+}
+
+.pub-cover::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(213,183,120,.23);
+    border-radius: 50%;
+    left: -40px;
+    bottom: -65px;
+    box-shadow: 0 0 0 15px rgba(213,183,120,.03),
+                0 0 0 30px rgba(213,183,120,.025);
+}
+
+.pub-cover small {
+    color: var(--gold);
+    font-size: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.pub-cover strong {
+    font-size: 30px;
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+.pub-info h3 {
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.pub-info p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.pub-info a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold);
+    font-size: 11px;
+}
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding: 85px 0;
+    background:
+        radial-gradient(ellipse at center, rgba(34,83,57,.3), transparent 65%);
+}
+
+.quote-mark {
+    font-size: 75px;
+    color: var(--gold);
+    line-height: 1;
+    font-family: Georgia, serif;
+}
+
+.quote h2 {
+    font-size: clamp(24px, 4vw, 42px);
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 15px auto 20px;
+    font-weight: 800;
+}
+
+.quote p {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+.footer {
+    border-top: 1px solid var(--line);
+    background: #061610;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-about p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2.2;
+    margin-top: 20px;
+    max-width: 320px;
+}
+
+.footer h4 {
+    font-size: 13px;
+    margin-bottom: 18px;
+    color: var(--gold);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #aab9ae;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #84968a;
+    font-size: 10px;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    z-index: 50;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(213,183,120,.5);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    background: rgba(7,27,22,.85);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .3s;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-card.featured {
+        grid-column: span 2;
+    }
+
+    .events-grid,
+    .pub-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .media-card:first-child {
+        grid-row: auto;
+        min-height: 350px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .brand-mark {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand-text strong {
+        font-size: 12px;
+    }
+
+    .brand-text span {
+        font-size: 9px;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        left: 0;
+        padding: 15px 5% 22px;
+        background: rgba(7,27,22,.98);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: .3s;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-image {
+        background:
+            linear-gradient(0deg, var(--bg) 0%, rgba(7,27,22,.75) 50%, rgba(7,27,22,.55) 100%),
+            url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=80") center/cover;
+    }
+
+    .hero-content {
+        padding: 70px 0 100px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 11vw, 58px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        font-size: 9px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-head {
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
+    .section-desc {
+        font-size: 12px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat {
+        padding: 23px 10px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .stat:nth-child(2) {
+        border-left: 0;
+    }
+
+    .stat-number {
+        font-size: 31px;
+    }
+
+    .news-grid,
+    .events-grid,
+    .pub-grid,
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card.featured {
+        grid-column: auto;
+    }
+
+    .news-image,
+    .news-card.featured .news-image {
+        height: 225px;
+    }
+
+    .manifesto {
+        padding: 70px 0;
+    }
+
+    .manifesto-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .manifesto-symbol {
+        width: 160px;
+        font-size: 65px;
+    }
+
+    .manifesto h2 {
+        font-size: 32px;
+    }
+
+    .manifesto p {
+        font-size: 12px;
+    }
+
+    .media-card,
+    .media-card:first-child {
+        min-height: 300px;
+    }
+
+    .media-card:first-child .media-overlay h3 {
+        font-size: 22px;
+    }
+
+    .pub-cover {
+        min-height: 190px;
+    }
+
+    .quote {
+        padding: 60px 0;
+    }
+
+    .quote h2 {
+        font-size: 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-about {
+        grid-column: span 2;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient"></div>
+<div class="grain"></div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container navbar">
+
+        <a class="brand" href="#home">
+            <div class="brand-mark">ر</div>
+            <div class="brand-text">
+                <strong>رسانه</strong>
+                <span>بسیج دانشجویی دانشگاه فرهنگیان گیلان</span>
+            </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">صفحه اصلی</a>
+            <a href="#news">اخبار</a>
+            <a href="#events">رویدادها</a>
+            <a href="#media">چندرسانه‌ای</a>
+            <a href="#publications">نشریات</a>
+            <a href="#about">درباره ما</a>
+        </nav>
+
+        <a class="nav-cta" href="#news">تازه‌ترین مطالب ↙</a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="باز کردن منو"
+                aria-expanded="false">☰</button>
+
+    </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-image"></div>
+    <div class="hero-grid"></div>
+
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span class="live-dot"></span>
+                رسانه‌ای برای اندیشه، آگاهی و کنش
+            </div>
+
+            <h1>
+                روایت امروز،<br>
+                <span class="outline">ساختن فردا</span>
+            </h1>
+
+            <p class="hero-description">
+                روایت جریان دانشجویی، اندیشه تربیتی و حرکت‌های فرهنگی
+                در دانشگاه فرهنگیان استان گیلان؛
+                از میدان اندیشه تا عرصه عمل.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#news" class="btn btn-primary">
+                    کشف تازه‌ترین روایت‌ها <span>←</span>
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    با رسانه آشنا شوید <span>↙</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hero-bottom">
+        <span>رسانه بسیج دانشجویی دانشگاه فرهنگیان گیلان</span>
+        <div class="hero-scroll">
+            <span>برای کشف بیشتر اسکرول کنید</span>
+            <span class="scroll-line"></span>
+        </div>
+    </div>
+
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-label="موضوعات رسانه">
+    <div class="ticker-track">
+
+        <div class="ticker-item"><span>✳</span> اندیشه و مطالبه‌گری</div>
+        <div class="ticker-item"><span>✳</span> تربیت معلم تراز انقلاب اسلامی</div>
+        <div class="ticker-item"><span>✳</span> روایت فعالیت‌های دانشجویی</div>
+        <div class="ticker-item"><span>✳</span> جهاد تربیتی و عدالت آموزشی</div>
+        <div class="ticker-item"><span>✳</span> فرهنگ و مقاومت</div>
+
+        <div class="ticker-item"><span>✳</span> اندیشه و مطالبه‌گری</div>
+        <div class="ticker-item"><span>✳</span> تربیت معلم تراز انقلاب اسلامی</div>
+        <div class="ticker-item"><span>✳</span> روایت فعالیت‌های دانشجویی</div>
+        <div class="ticker-item"><span>✳</span> جهاد تربیتی و عدالت آموزشی</div>
+        <div class="ticker-item"><span>✳</span> فرهنگ و مقاومت</div>
+
+    </div>
+</div>
+
+<!-- STATS -->
+<section class="container">
+    <div class="stats reveal">
+
+        <div class="stat">
+            <div class="stat-number" data-count="4">۰</div>
+            <div class="stat-label">حوزه فعالیت رسانه</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number" data-count="6">۰</div>
+            <div class="stat-label">بسترهای روایت و آگاهی</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number" data-count="1">۰</div>
+            <div class="stat-label">رسالت مشترک</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">ظرفیت روایت و اثرگذاری</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- NEWS -->
+<section class="section" id="news">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">آخرین روایت‌ها</span>
+                <h2 class="section-title">آنچه در جریان است<span class="gold">.</span></h2>
+                <p class="section-desc">
+                    از رویدادهای دانشگاه تا ایده‌هایی که می‌توانند مسیر آینده را تغییر دهند.
+                </p>
+            </div>
+
+            <a href="#events" class="view-all">مشاهده رویدادها ←</a>
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card featured reveal">
+                <a href="#about" aria-label="آشنایی با رسالت رسانه">
+                    <div class="news-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1100&q=80"
+                            alt="جمعی از دانشجویان در محیط دانشگاه"
+                            loading="lazy">
+                        <span class="news-tag">دانشگاه و تشکیلات</span>
+                    </div>
+                    <div class="news-body">
+                        <div class="news-meta">
+                            <span>ویژه‌نامه رسانه</span>
+                            <span>●</span>
+                            <span>معرفی و روایت</span>
+                        </div>
+                        <h3>دانشگاه؛ نقطه آغاز اندیشه و میدان ساختن آینده</h3>
+                        <p>
+                            نگاهی به نقش دانشجو، هویت تشکیلاتی و ظرفیت جریان‌های
+                            فرهنگی در شکل‌گیری آینده آموزش‌وپرورش.
+                        </p>
+                        <div class="card-bottom">
+                            <span>ادامه روایت</span>
+                            <span class="arrow-circle">↙</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="news-card reveal">
+                <a href="#events" aria-label="جهاد تربیتی">
+                    <div class="news-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                            alt="آموزش و یادگیری"
+                            loading="lazy">
+                        <span class="news-tag">جهاد تربیتی</span>
+                    </div>
+                    <div class="news-body">
+                        <div class="news-meta">
+                            <span>آموزش‌وپرورش</span>
+                            <span>●</span>
+                            <span>روایت میدانی</span>
+                        </div>
+                        <h3>از کلاس درس تا میدان عدالت آموزشی</h3>
+                        <p>
+                            روایت ایده‌هایی برای پیوند دانشگاه، مدرسه و خدمت اجتماعی.
+                        </p>
+                        <div class="card-bottom">
+                            <span>ادامه روایت</span>
+                            <span class="arrow-circle">↙</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="news-card reveal">
+                <a href="#publications" aria-label="اندیشه و تحلیل">
+                    <div class="news-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+                            alt="دفتر یادداشت و نوشتن"
+                            loading="lazy">
+                        <span class="news-tag">اندیشه و تحلیل</span>
+                    </div>
+                    <div class="news-body">
+                        <div class="news-meta">
+                            <span>یادداشت</span>
+                            <span>●</span>
+                            <span>دیدگاه دانشجویی</span>
+                        </div>
+                        <h3>معلم آینده؛ فراتر از انتقال دانش</h3>
+                        <p>
+                            درباره هویت حرفه‌ای معلم و مسئولیت او در تربیت نسل آینده.
+                        </p>
+                        <div class="card-bottom">
+                            <span>ادامه روایت</span>
+                            <span class="arrow-circle">↙</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="about">
+    <div class="container manifesto-inner">
+
+        <div class="manifesto-symbol reveal">ر</div>
+
+        <div class="reveal">
+            <span class="eyebrow">درباره رسانه</span>
+
+            <h2>
+                فراتر از خبر؛<br>
+                <span class="gold">روایت یک جریان</span>
+            </h2>
+
+            <p>
+                رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان،
+                بستری برای بازتاب فعالیت‌ها، انتشار ایده‌ها و روایت
+                حرکت‌های دانشجویی است؛ رسانه‌ای برای پیوند اندیشه با
+                میدان عمل و برجسته‌کردن نقش دانشجومعلمان در آینده
+                تعلیم‌وتربیت کشور.
+            </p>
+
+            <a href="#publications" class="btn btn-primary">
+                کشف جهان رسانه <span>←</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section" id="events">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">در مسیر حرکت</span>
+                <h2 class="section-title">حوزه‌های فعالیت<span class="gold">.</span></h2>
+                <p class="section-desc">
+                    عرصه‌هایی برای یادگیری، کنشگری، روایت و ساختن تجربه‌های تازه.
+                </p>
+            </div>
+        </div>
+
+        <div class="events-grid">
+
+            <article class="event-card reveal">
+                <div class="event-number">01</div>
+                <div class="event-icon">✦</div>
+                <h3>تربیت معلم و آموزش</h3>
+                <p>
+                    بازخوانی هویت معلم، تحول در آموزش‌وپرورش و
+                    بررسی ایده‌های نو در تعلیم‌وتربیت.
+                </p>
+                <a href="#publications" class="event-link">مطالعه مطالب ←</a>
+            </article>
+
+            <article class="event-card reveal">
+                <div class="event-number">02</div>
+                <div class="event-icon">◈</div>
+                <h3>جهاد تربیتی</h3>
+                <p>
+                    روایت تجربه‌های خدمت آموزشی، عدالت تربیتی و
+                    ارتباط دانشگاه با مسائل واقعی جامعه.
+                </p>
+                <a href="#news" class="event-link">مشاهده روایت‌ها ←</a>
+            </article>
+
+            <article class="event-card reveal">
+                <div class="event-number">03</div>
+                <div class="event-icon">✳</div>
+                <h3>فرهنگ و مقاومت</h3>
+                <p>
+                    پرداخت رسانه‌ای به مسائل فرهنگی، تحولات منطقه
+                    و روایت‌های مرتبط با مقاومت و آگاهی.
+                </p>
+                <a href="#media" class="event-link">ورود به چندرسانه‌ای ←</a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- MEDIA -->
+<section class="section media-section" id="media">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">تصویر، صدا، روایت</span>
+                <h2 class="section-title">جهان چندرسانه‌ای<span class="gold">.</span></h2>
+                <p class="section-desc">
+                    جایی برای دیدن، شنیدن و تجربه‌کردن روایت‌ها از زاویه‌ای متفاوت.
+                </p>
+            </div>
+
+            <a href="#publications" class="view-all">تولیدات رسانه‌ای ←</a>
+        </div>
+
+        <div class="media-grid">
+
+            <a href="#news" class="media-card reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80"
+                    alt="تولید محتوای دیجیتال"
+                    loading="lazy">
+                <div class="media-overlay">
+                    <div class="media-play">▶</div>
+                    <span class="media-type">گزارش تصویری</span>
+                    <h3>از پشت صحنه فعالیت‌های دانشجویی</h3>
+                </div>
+            </a>
+
+            <a href="#news" class="media-card reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=800&q=80"
+                    alt="تولید محتوای صوتی"
+                    loading="lazy">
+                <div class="media-overlay">
+                    <div class="media-play">▶</div>
+                    <span class="media-type">صوت و پادکست</span>
+                    <h3>روایت‌هایی برای شنیدن</h3>
+                </div>
+            </a>
+
+            <a href="#news" class="media-card reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+                    alt="طبیعت و روایت تصویری"
+                    loading="lazy">
+                <div class="media-overlay">
+                    <div class="media-play">▶</div>
+                    <span class="media-type">مستند و نماهنگ</span>
+                    <h3>قاب‌هایی از یک مسیر</h3>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="section" id="publications">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">اندیشه‌های ماندگار</span>
+                <h2 class="section-title">کتابخانه رسانه<span class="gold">.</span></h2>
+                <p class="section-desc">
+                    جایی برای ایده‌ها، یادداشت‌ها، پرونده‌های ویژه و تولیدات مکتوب.
+                </p>
+            </div>
+        </div>
+
+        <div class="pub-grid">
+
+            <article class="pub-card reveal">
+                <div class="pub-cover">
+                    <small>پرونده شماره ۰۱</small>
+                    <strong>معلم<br>و آینده</strong>
+                    <small>تعلیم‌وتربیت · تحلیل</small>
+                </div>
+                <div class="pub-info">
+                    <h3>پرونده تربیت معلم</h3>
+                    <p>نگاهی به هویت حرفه‌ای معلم و مسئولیت‌های تربیتی او.</p>
+                    <a href="#news">مطالعه مطالب ←</a>
+                </div>
+            </article>
+
+            <article class="pub-card reveal">
+                <div class="pub-cover"
+                     style="background:radial-gradient(circle at 80% 20%,rgba(213,183,120,.2),transparent 45%),linear-gradient(140deg,#3b4530,#101c15)">
+                    <small>پرونده شماره ۰۲</small>
+                    <strong>اندیشه<br>و جامعه</strong>
+                    <small>فرهنگ · تحلیل</small>
+                </div>
+                <div class="pub-info">
+                    <h3>یادداشت‌ها و تحلیل‌ها</h3>
+                    <p>بازتاب دیدگاه‌ها و تحلیل‌های دانشجویی درباره مسائل روز.</p>
+                    <a href="#news">خواندن یادداشت‌ها ←</a>
+                </div>
+            </article>
+
+            <article class="pub-card reveal">
+                <div class="pub-cover"
+                     style="background:radial-gradient(circle at 80% 20%,rgba(213,183,120,.2),transparent 45%),linear-gradient(140deg,#23404a,#091b20)">
+                    <small>پرونده شماره ۰۳</small>
+                    <strong>روایت<br>میدان</strong>
+                    <small>گزارش · تجربه</small>
+                </div>
+                <div class="pub-info">
+                    <h3>گزارش‌ها و تجربه‌ها</h3>
+                    <p>روایت برنامه‌ها، فعالیت‌ها و تجربه‌های میدانی دانشجویان.</p>
+                    <a href="#events">مشاهده گزارش‌ها ←</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote reveal">
+    <div class="container">
+        <div class="quote-mark">“</div>
+        <h2>
+            آینده را کسانی می‌سازند که
+            <span class="gold">امروز مسئولانه روایت می‌کنند.</span>
+        </h2>
+        <p>رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان</p>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+                <a class="brand" href="#home">
+                    <div class="brand-mark">ر</div>
+                    <div class="brand-text">
+                        <strong>رسانه</strong>
+                        <span>بسیج دانشجویی دانشگاه فرهنگیان گیلان</span>
+                    </div>
+                </a>
+
+                <p>
+                    بستری برای روایت اندیشه‌ها، فعالیت‌ها و تجربه‌های
+                    دانشجویی در مسیر تربیت معلم و تحول در تعلیم‌وتربیت.
+                </p>
+            </div>
+
+            <div>
+                <h4>دسترسی سریع</h4>
+                <div class="footer-links">
+                    <a href="#home">صفحه اصلی</a>
+                    <a href="#news">اخبار و روایت‌ها</a>
+                    <a href="#events">حوزه‌های فعالیت</a>
+                    <a href="#about">درباره رسانه</a>
+                </div>
+            </div>
+
+            <div>
+                <h4>تولیدات رسانه‌ای</h4>
+                <div class="footer-links">
+                    <a href="#media">تصویر و ویدئو</a>
+                    <a href="#media">صوت و پادکست</a>
+                    <a href="#publications">نشریات</a>
+                    <a href="#publications">یادداشت‌ها</a>
+                </div>
+            </div>
+
+            <div>
+                <h4>ارتباط با ما</h4>
+                <div class="footer-links">
+                    <a href="#about">معرفی رسانه</a>
+                    <a href="https://eitaa.com/anjoman_ebtedaeicfu"
+                       target="_blank" rel="noopener noreferrer">
+                        کانال انجمن علمی آموزش ابتدایی
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© رسانه بسیج دانشجویی دانشگاه فرهنگیان استان گیلان</span>
+            <span>اندیشه · آگاهی · روایت · حرکت</span>
+        </div>
+
+    </div>
+</footer>
+
+<a class="back-top" href="#home" id="backTop" aria-label="بازگشت به بالا">↑</a>
+
+<script>
+/* MOBILE MENU */
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    const opened = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', opened);
+    menuToggle.textContent = opened ? '×' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+    });
+});
+
+/* REVEAL ON SCROLL */
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+} else {
+    revealItems.forEach(item => item.classList.add('visible'));
+}
+
+/* ANIMATED NUMBERS */
+
+function animateCounter(element) {
+    const target = Number(element.dataset.count);
+    const duration = 1300;
+    const start = performance.now();
+
+    function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const value = Math.round(target * eased);
+
+        element.textContent = value.toLocaleString('fa-IR');
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+const counters = document.querySelectorAll('[data-count]');
+
+if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+} else {
+    counters.forEach(counter => animateCounter(counter));
+}
+
+/* BACK TO TOP */
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > 450);
+}, { passive: true });
+</script>
 
 </body>
-</html>
+    </html>
